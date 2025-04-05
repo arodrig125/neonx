@@ -1,0 +1,85 @@
+[workspace]
+members = [
+  "Cobotium/sdk",
+  "Cobotium/cli",
+  "Cobotium/validator",
+  "Cobotium/programs/*",
+  "Cobotium/install",
+  "Cobotium/runtime",
+  "Cobotium/core",
+  "Cobotium/ledger"
+]
+
+[workspace.package]
+edition = "2021"
+version = "0.1.0"
+authors = ["Cobotium Contributors"]
+homepage = "https://github.com/aroddev/Cobotium" # Replace with your project's URL
+repository = "https://github.com/aroddev/Cobotium" # Add the repository URL here
+license = "Apache-2.0"
+
+[workspace.dependencies]
+# Core Solana Dependencies
+solana-program = "1.16.15"
+solana-sdk = "1.16.15"
+solana-frozen-abi = "1.16.15"
+solana-frozen-abi-macro = "1.16.15"
+solana-logger = "1.16.15"
+solana-sdk-macro = "1.16.15"
+
+# SPL Token Dependencies
+spl-token = "4.0.0"
+spl-token-2022 = "0.6.0"
+
+# Serialization
+serde = { version = "1.0.188", features = ["derive"] }
+serde_derive = "1.0.188"
+serde_json = "1.0.107"
+bincode = "1.3.3"
+borsh = "0.10"
+
+# Cryptography
+curve25519-dalek = "4.1.1"
+ed25519-dalek = "1.0.1"
+ed25519-dalek-bip32 = "0.2.0"
+hmac = "0.12.1"
+sha2 = "0.10.8"
+sha3 = "0.10.8"
+digest = "0.10.7"
+blake3 = "1.5.0"
+libsecp256k1 = "0.7.1"
+
+# Utilities
+lazy_static = "1.4.0"
+regex = "1.10.2"
+thiserror = "1.0.48"
+anyhow = "1.0.75"
+log = "0.4.20"
+env_logger = "0.10.1"
+bitflags = "2.4.1"
+byteorder = "1.5.0"
+bytemuck = "1.14.0"
+generic-array = "0.14.7"
+itertools = "0.10.5"
+memmap2 = "0.7.1"
+
+# Data Encoding
+base64 = "0.21.0"
+bs58 = "0.5.0"
+hex = "0.4.3"
+
+# CLI
+clap = { version = "4.1.8", features = ["derive"] }
+
+# Time
+chrono = { version = "0.4.31", features = ["serde"] }
+
+# Wallet / Derivation
+derivation-path = "0.2.0"
+
+# Testing
+assert_matches = "1.5.0"
+
+# Struct Derivation
+num-derive = "0.4.0"
+num-traits = "0.2.17" # Add the num-traits dependency here
