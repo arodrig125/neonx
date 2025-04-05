@@ -19,7 +19,7 @@ repository = "https://github.com/aroddev/Cobotium" # Add the repository URL here
 license = "Apache-2.0"
 
 [workspace.dependencies]
-# Core Solana Dependencies
+# Core Cobotium Dependencies
 solana-program = "1.16.15"
 solana-sdk = "1.16.15"
 solana-frozen-abi = "1.16.15"
