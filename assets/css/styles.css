@@ -667,11 +667,123 @@ section {
 .community-link:hover {
     background-color: rgba(255, 255, 255, 0.1);
     transform: translateY(-10px);
-    box-shadow: var(--neon-pink);
+    box-shadow: var(--neon-green);
 }
 
 .community-link:hover i {
     transform: scale(1.2);
+}
+
+/* Community Showcase */
+.community-member {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 255, 0, 0.05);
+}
+
+.community-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 255, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 255, 0, 0.1);
+}
+
+.member-avatar {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+}
+
+.member-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    background: linear-gradient(45deg, var(--primary), var(--secondary)) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+}
+
+.member-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.community-member:hover .member-glow {
+    opacity: 1;
+}
+
+.member-info {
+    text-align: center;
+}
+
+.member-info h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+}
+
+.member-title {
+    color: var(--gray-light);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.member-quote {
+    font-style: italic;
+    color: var(--light);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding: 0 0.5rem;
+}
+
+.member-quote::before,
+.member-quote::after {
+    content: '"';
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.member-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.member-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--light);
+    transition: all 0.3s ease;
+}
+
+.member-socials a:hover {
+    background-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(0, 255, 0, 0.3);
 }
 
 /* FAQ Section */
