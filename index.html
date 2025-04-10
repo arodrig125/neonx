@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeonX - The Ultimate Solana Meme Coin</title>
-    <meta http-equiv="refresh" content="5;url=https://pump.fun">
+    <meta http-equiv="refresh" content="30;url=https://pump.fun">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -19,7 +19,7 @@
             overflow: hidden;
             position: relative;
         }
-        
+
         .navbar {
             position: fixed;
             top: 0;
@@ -31,9 +31,10 @@
             padding: 1rem 2rem;
             z-index: 100;
             background-color: rgba(0, 0, 0, 0.7);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
@@ -44,7 +45,7 @@
             color: #fff;
             text-shadow: 0 0 10px #00ff00;
         }
-        
+
         .nav-button {
             background-color: #00ff00;
             color: #000;
@@ -57,20 +58,20 @@
             transition: all 0.3s ease;
             box-shadow: 0 0 10px #00ff00;
         }
-        
+
         .nav-button:hover {
             background-color: #fff;
             box-shadow: 0 0 20px #00ff00;
             transform: translateY(-3px);
         }
-        
+
         .container {
             z-index: 2;
             padding: 2rem;
             max-width: 600px;
             margin: auto;
         }
-        
+
         h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
@@ -78,23 +79,23 @@
             letter-spacing: 2px;
             margin-top: 4rem;
         }
-        
+
         .neon-text {
             color: #fff;
-            text-shadow: 
+            text-shadow:
                 0 0 5px #00ff00,
                 0 0 10px #00ff00,
                 0 0 20px #00ff00,
                 0 0 40px #00ff00;
             animation: pulse 2s infinite;
         }
-        
+
         p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
             line-height: 1.6;
         }
-        
+
         .loader {
             width: 50px;
             height: 50px;
@@ -104,7 +105,7 @@
             animation: spin 1s ease-in-out infinite;
             margin: 0 auto 2rem;
         }
-        
+
         .button {
             display: inline-block;
             background-color: #00ff00;
@@ -118,13 +119,13 @@
             transition: all 0.3s ease;
             box-shadow: 0 0 10px #00ff00;
         }
-        
+
         .button:hover {
             background-color: #fff;
             box-shadow: 0 0 20px #00ff00;
             transform: translateY(-3px);
         }
-        
+
         .background {
             position: absolute;
             top: 0;
@@ -133,21 +134,21 @@
             height: 100%;
             z-index: 1;
         }
-        
+
         .grid {
             position: absolute;
             width: 200%;
             height: 200%;
             top: -50%;
             left: -50%;
-            background-image: 
+            background-image:
                 linear-gradient(rgba(0, 255, 0, 0.1) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px);
             background-size: 40px 40px;
             transform: perspective(500px) rotateX(60deg);
             animation: grid-move 15s linear infinite;
         }
-        
+
         .token-info {
             margin-top: 2rem;
             padding: 1rem;
@@ -155,7 +156,7 @@
             border-radius: 10px;
             border: 1px solid rgba(0, 255, 0, 0.3);
         }
-        
+
         .token-address {
             font-family: monospace;
             background-color: rgba(0, 255, 0, 0.1);
@@ -164,17 +165,17 @@
             margin-top: 0.5rem;
             word-break: break-all;
         }
-        
+
         @keyframes pulse {
             0% { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00; }
             50% { text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 50px #00ff00; }
             100% { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00; }
         }
-        
+
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-        
+
         @keyframes grid-move {
             0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
             100% { transform: perspective(500px) rotateX(60deg) translateY(40px); }
@@ -190,42 +191,42 @@
     <div class="background">
         <div class="grid"></div>
     </div>
-    
+
     <div class="container">
         <h1 class="neon-text">NeonX</h1>
         <p>The Ultimate Solana Meme Coin</p>
         <p>Illuminating the Chain with the brightest meme coin in crypto!</p>
-        
+
         <div class="token-info">
             <p><strong>Token Address:</strong></p>
             <div class="token-address">8GBj4X4xBwL2qsdTkkkfkXub5w8YgcE96CJ7gLV3pump</div>
         </div>
-        
+
         <div class="loader"></div>
-        <p>Redirecting you to pump.fun in 5 seconds...</p>
+        <p>Redirecting you to pump.fun in 30 seconds...</p>
         <div id="buy-section">
             <a href="https://pump.fun" class="button">Get on pump.fun</a>
         </div>
     </div>
-    
+
     <script>
         // Smooth scroll for the Buy Now button
         document.querySelector('.nav-button').addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });
             }
         });
-        
-        // Redirect to pump.fun after 5 seconds
+
+        // Redirect to pump.fun after 30 seconds
         setTimeout(function() {
             window.location.href = "https://pump.fun";
-        }, 5000);
+        }, 30000);
     </script>
 </body>
 </html>
