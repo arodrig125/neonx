@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050510" />
+      <stop offset="100%" stop-color="#0a0a1a" />
+    </linearGradient>
+    <linearGradient id="coinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ff00" />
+      <stop offset="100%" stop-color="#00ffff" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="smallGlow">
+      <feGaussianBlur stdDeviation="2" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#bgGradient)" />
+  
+  <!-- Grid lines -->
+  <g opacity="0.1">
+    <line x1="0" y1="50" x2="600" y2="50" stroke="#00ff00" stroke-width="1" />
+    <line x1="0" y1="100" x2="600" y2="100" stroke="#00ff00" stroke-width="1" />
+    <line x1="0" y1="150" x2="600" y2="150" stroke="#00ff00" stroke-width="1" />
+    <line x1="0" y1="200" x2="600" y2="200" stroke="#00ff00" stroke-width="1" />
+    <line x1="0" y1="250" x2="600" y2="250" stroke="#00ff00" stroke-width="1" />
+    <line x1="0" y1="300" x2="600" y2="300" stroke="#00ff00" stroke-width="1" />
+    <line x1="0" y1="350" x2="600" y2="350" stroke="#00ff00" stroke-width="1" />
+    
+    <line x1="50" y1="0" x2="50" y2="400" stroke="#00ff00" stroke-width="1" />
+    <line x1="100" y1="0" x2="100" y2="400" stroke="#00ff00" stroke-width="1" />
+    <line x1="150" y1="0" x2="150" y2="400" stroke="#00ff00" stroke-width="1" />
+    <line x1="200" y1="0" x2="200" y2="400" stroke="#00ff00" stroke-width="1" />
+    <line x1="250" y1="0" x2="250" y2="400" stroke="#00ff00" stroke-width="1" />
+    <line x1="300" y1="0" x2="300" y2="400" stroke="#00ff00" stroke-width="1" />
+    <line x1="350" y1="0" x2="350" y2="400" stroke="#00ff00" stroke-width="1" />
+    <line x1="400" y1="0" x2="400" y2="400" stroke="#00ff00" stroke-width="1" />
+    <line x1="450" y1="0" x2="450" y2="400" stroke="#00ff00" stroke-width="1" />
+    <line x1="500" y1="0" x2="500" y2="400" stroke="#00ff00" stroke-width="1" />
+    <line x1="550" y1="0" x2="550" y2="400" stroke="#00ff00" stroke-width="1" />
+  </g>
+  
+  <!-- Main Coin -->
+  <g filter="url(#glow)" transform="translate(300, 200)">
+    <circle cx="0" cy="0" r="120" fill="url(#coinGradient)" />
+    <circle cx="0" cy="0" r="110" fill="#0a0a1a" />
+    <circle cx="0" cy="0" r="100" fill="url(#coinGradient)" opacity="0.9" />
+    
+    <!-- NeonX Logo -->
+    <g transform="translate(-50, -30) scale(2.5)">
+      <path d="M10 12L16 20L10 28" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M30 12L24 20L30 28" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+      <line x1="20" y1="10" x2="20" y2="30" stroke="white" stroke-width="3" stroke-linecap="round" />
+    </g>
+  </g>
+  
+  <!-- Small floating coins -->
+  <g filter="url(#smallGlow)" transform="translate(100, 100)">
+    <circle cx="0" cy="0" r="20" fill="url(#coinGradient)" opacity="0.7" />
+    <circle cx="0" cy="0" r="15" fill="#0a0a1a" />
+    <circle cx="0" cy="0" r="10" fill="url(#coinGradient)" opacity="0.9" />
+  </g>
+  
+  <g filter="url(#smallGlow)" transform="translate(500, 150)">
+    <circle cx="0" cy="0" r="25" fill="url(#coinGradient)" opacity="0.7" />
+    <circle cx="0" cy="0" r="20" fill="#0a0a1a" />
+    <circle cx="0" cy="0" r="15" fill="url(#coinGradient)" opacity="0.9" />
+  </g>
+  
+  <g filter="url(#smallGlow)" transform="translate(150, 300)">
+    <circle cx="0" cy="0" r="15" fill="url(#coinGradient)" opacity="0.7" />
+    <circle cx="0" cy="0" r="10" fill="#0a0a1a" />
+    <circle cx="0" cy="0" r="7" fill="url(#coinGradient)" opacity="0.9" />
+  </g>
+  
+  <g filter="url(#smallGlow)" transform="translate(450, 320)">
+    <circle cx="0" cy="0" r="18" fill="url(#coinGradient)" opacity="0.7" />
+    <circle cx="0" cy="0" r="13" fill="#0a0a1a" />
+    <circle cx="0" cy="0" r="9" fill="url(#coinGradient)" opacity="0.9" />
+  </g>
+</svg>
