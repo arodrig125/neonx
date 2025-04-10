@@ -113,11 +113,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const shadowX = distanceX * 10;
             const shadowY = distanceY * 10;
 
-            this.style.boxShadow = `${shadowX}px ${shadowY}px 30px rgba(255, 0, 255, 0.2), 0 0 10px rgba(255, 0, 255, 0.3)`;
+            this.style.boxShadow = `${shadowX}px ${shadowY}px 30px rgba(0, 255, 0, 0.2), 0 0 10px rgba(0, 255, 0, 0.3)`;
         });
 
         tokenCard.addEventListener('mouseleave', function() {
-            this.style.boxShadow = '0 0 20px rgba(255, 0, 255, 0.1)';
+            this.style.boxShadow = '0 0 20px rgba(0, 255, 0, 0.1)';
         });
     }
 
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 tooltip.className = 'copy-tooltip';
                 tooltip.textContent = 'Copied!';
                 tooltip.style.position = 'absolute';
-                tooltip.style.backgroundColor = '#ff00ff';
+                tooltip.style.backgroundColor = '#00ff00';
                 tooltip.style.color = 'white';
                 tooltip.style.padding = '5px 10px';
                 tooltip.style.borderRadius = '4px';

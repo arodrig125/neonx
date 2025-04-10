@@ -5,9 +5,9 @@
 
 :root {
     /* Primary Colors */
-    --primary: #ff00ff; /* Neon Pink */
-    --primary-dark: #cc00cc;
-    --primary-light: #ff66ff;
+    --primary: #00ff00; /* Neon Green */
+    --primary-dark: #00cc00;
+    --primary-light: #66ff66;
 
     /* Secondary Colors */
     --secondary: #00ffff; /* Neon Cyan */
@@ -16,8 +16,8 @@
 
     /* Accent Colors */
     --accent-1: #ffff00; /* Neon Yellow */
-    --accent-2: #00ff00; /* Neon Green */
-    --accent-3: #ff0099; /* Neon Magenta */
+    --accent-2: #ff00ff; /* Neon Pink */
+    --accent-3: #00ff99; /* Neon Mint */
 
     /* Neutral Colors */
     --dark: #0a0a1a;
@@ -51,7 +51,7 @@
     --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.25);
 
     /* Neon Shadows */
-    --neon-pink: 0 0 5px rgba(255, 0, 255, 0.5), 0 0 10px rgba(255, 0, 255, 0.3), 0 0 15px rgba(255, 0, 255, 0.1);
+    --neon-green: 0 0 5px rgba(0, 255, 0, 0.5), 0 0 10px rgba(0, 255, 0, 0.3), 0 0 15px rgba(0, 255, 0, 0.1);
     --neon-cyan: 0 0 5px rgba(0, 255, 255, 0.5), 0 0 10px rgba(0, 255, 255, 0.3), 0 0 15px rgba(0, 255, 255, 0.1);
     --neon-yellow: 0 0 5px rgba(255, 255, 0, 0.5), 0 0 10px rgba(255, 255, 0, 0.3), 0 0 15px rgba(255, 255, 0, 0.1);
 }
@@ -113,13 +113,13 @@ a:hover {
 .btn-primary {
     background: linear-gradient(45deg, var(--primary), var(--primary-dark));
     border: none;
-    box-shadow: var(--neon-pink);
+    box-shadow: var(--neon-green);
 }
 
 .btn-primary:hover, .btn-primary:focus {
     background: linear-gradient(45deg, var(--primary-dark), var(--primary));
     transform: translateY(-3px);
-    box-shadow: 0 0 10px rgba(255, 0, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7), 0 0 20px rgba(0, 255, 0, 0.5);
 }
 
 .btn-outline-light {
@@ -344,7 +344,7 @@ section {
     background-color: var(--primary);
     color: var(--light);
     transform: translateY(-3px);
-    box-shadow: var(--neon-pink);
+    box-shadow: var(--neon-green);
 }
 
 /* About Section */
@@ -352,6 +352,7 @@ section {
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
     color: var(--primary);
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
 }
 
 .about-image {
@@ -416,14 +417,14 @@ section {
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: var(--radius-lg);
     padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.1);
+    border: 1px solid rgba(0, 255, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .token-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(255, 0, 255, 0.2);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.2);
 }
 
 .token-info-grid {
@@ -522,7 +523,7 @@ section {
 
 .roadmap-item.active::before {
     background: linear-gradient(45deg, var(--primary), var(--secondary));
-    box-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
 }
 
 .roadmap-content {
@@ -540,14 +541,15 @@ section {
 }
 
 .roadmap-item.active .roadmap-content {
-    border: 1px solid rgba(255, 0, 255, 0.3);
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.1);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
 }
 
 .roadmap-content h3 {
     font-size: 1.25rem;
     color: var(--primary);
     margin-bottom: 0.5rem;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
 }
 
 .roadmap-content h4 {
@@ -602,7 +604,7 @@ section {
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    box-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
 .step-content h3 {
@@ -788,7 +790,7 @@ hr {
     align-items: center;
     justify-content: center;
     font-size: 1.25rem;
-    box-shadow: var(--neon-pink);
+    box-shadow: var(--neon-green);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
@@ -802,7 +804,7 @@ hr {
 
 .back-to-top:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 15px rgba(255, 0, 255, 0.8), 0 0 30px rgba(255, 0, 255, 0.4);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.8), 0 0 30px rgba(0, 255, 0, 0.4);
 }
 
 /* Responsive Adjustments */
