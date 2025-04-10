@@ -30,25 +30,25 @@ document.addEventListener('DOMContentLoaded', function() {
         anchor.addEventListener('click', function(e) {
             if (this.getAttribute('href') !== '#') {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-                
+
                 if (targetElement) {
                     const navbarHeight = document.querySelector('.navbar').offsetHeight;
                     const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-                    
+
                     window.scrollTo({
                         top: targetPosition,
                         behavior: 'smooth'
                     });
-                    
+
                     // Update active nav link
                     document.querySelectorAll('.navbar .nav-link').forEach(link => {
                         link.classList.remove('active');
                     });
                     this.classList.add('active');
-                    
+
                     // Close mobile menu if open
                     const navbarCollapse = document.querySelector('.navbar-collapse');
                     if (navbarCollapse.classList.contains('show')) {
@@ -64,16 +64,16 @@ document.addEventListener('DOMContentLoaded', function() {
         let current = '';
         const sections = document.querySelectorAll('section');
         const navHeight = document.querySelector('.navbar').offsetHeight;
-        
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop - navHeight - 100;
             const sectionHeight = section.offsetHeight;
-            
+
             if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
                 current = section.getAttribute('id');
             }
         });
-        
+
         document.querySelectorAll('.navbar .nav-link').forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === `#${current}`) {
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu behavior
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    
+
     navbarLinks.forEach(link => {
         link.addEventListener('click', () => {
             const navbarCollapse = document.querySelector('.navbar-collapse');
@@ -95,49 +95,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Initialize Tokenomics Chart
-    const tokenomicsChart = document.getElementById('tokenomicsChart');
-    if (tokenomicsChart) {
-        new Chart(tokenomicsChart, {
-            type: 'doughnut',
-            data: {
-                labels: ['Public Sale', 'Liquidity Pool', 'Marketing', 'Team', 'Ecosystem Growth'],
-                datasets: [{
-                    data: [50, 20, 15, 10, 5],
-                    backgroundColor: [
-                        '#ff00ff', // Neon Pink
-                        '#00ffff', // Neon Cyan
-                        '#ffff00', // Neon Yellow
-                        '#00ff00', // Neon Green
-                        '#ff0099'  // Neon Magenta
-                    ],
-                    borderWidth: 0,
-                    hoverOffset: 10
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                cutout: '70%',
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                const label = context.label || '';
-                                const value = context.formattedValue || '';
-                                return `${label}: ${value}% (${(context.raw * 10).toLocaleString()} million NEONX)`;
-                            }
-                        }
-                    }
-                },
-                animation: {
-                    animateScale: true,
-                    animateRotate: true
-                }
-            }
+    // Add neon glow effect to token card
+    const tokenCard = document.querySelector('.token-card');
+    if (tokenCard) {
+        tokenCard.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Calculate distance from center
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const distanceX = (x - centerX) / centerX; // -1 to 1
+            const distanceY = (y - centerY) / centerY; // -1 to 1
+
+            // Apply subtle shadow based on mouse position
+            const shadowX = distanceX * 10;
+            const shadowY = distanceY * 10;
+
+            this.style.boxShadow = `${shadowX}px ${shadowY}px 30px rgba(255, 0, 255, 0.2), 0 0 10px rgba(255, 0, 255, 0.3)`;
+        });
+
+        tokenCard.addEventListener('mouseleave', function() {
+            this.style.boxShadow = '0 0 20px rgba(255, 0, 255, 0.1)';
         });
     }
 
@@ -159,19 +139,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 tooltip.style.zIndex = '1000';
                 tooltip.style.opacity = '0';
                 tooltip.style.transition = 'opacity 0.3s ease';
-                
+
                 // Position the tooltip
                 const rect = this.getBoundingClientRect();
                 tooltip.style.top = `${rect.top - 30 + window.scrollY}px`;
                 tooltip.style.left = `${rect.left + rect.width / 2}px`;
                 tooltip.style.transform = 'translateX(-50%)';
-                
+
                 // Add to DOM and animate
                 document.body.appendChild(tooltip);
                 setTimeout(() => {
                     tooltip.style.opacity = '1';
                 }, 10);
-                
+
                 // Remove after delay
                 setTimeout(() => {
                     tooltip.style.opacity = '0';
@@ -187,13 +167,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Neon glow effect on hover for buttons and cards
     const glowElements = document.querySelectorAll('.btn, .feature-card, .community-link');
-    
+
     glowElements.forEach(element => {
         element.addEventListener('mousemove', function(e) {
             const rect = this.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            
+
             this.style.setProperty('--x-pos', `${x}px`);
             this.style.setProperty('--y-pos', `${y}px`);
         });
@@ -210,12 +190,12 @@ document.addEventListener('DOMContentLoaded', function() {
             'assets/images/raydium-logo.png',
             'assets/images/jupiter-logo.png'
         ];
-        
+
         images.forEach(src => {
             const img = new Image();
             img.src = src;
         });
     }
-    
+
     preloadImages();
 });

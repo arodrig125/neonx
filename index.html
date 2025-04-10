@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeonX - The Ultimate Solana Meme Coin</title>
     <meta name="description" content="NeonX is a community-driven meme coin on the Solana blockchain with a total supply of 1 billion tokens.">
-    
+
     <!-- Favicon -->
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-    
+
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="NeonX - The Ultimate Solana Meme Coin">
     <meta property="og:description" content="Join the NeonX revolution on Solana. 1 billion total supply. To the moon!">
     <meta property="og:image" content="https://neonxcoin.xyz/assets/images/neonx-og.jpg">
     <meta property="og:url" content="https://neonxcoin.xyz">
     <meta name="twitter:card" content="summary_large_image">
-    
+
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="assets/css/styles.css">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,9 +46,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#tokenomics">Tokenomics</a>
-                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="#roadmap">Roadmap</a>
                     </li>
@@ -72,7 +70,7 @@
                     <p class="lead mb-4">NeonX is more than just a meme coin. It's a movement. Join our vibrant community as we revolutionize the Solana ecosystem with our 1 billion token supply.</p>
                     <div class="d-flex flex-wrap gap-2">
                         <a href="#how-to-buy" class="btn btn-primary btn-lg">Buy NeonX</a>
-                        <a href="#tokenomics" class="btn btn-outline-light btn-lg">Tokenomics</a>
+                        <a href="#community" class="btn btn-outline-light btn-lg">Join Community</a>
                     </div>
                     <div class="social-links mt-4">
                         <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter" class="social-link"><i class="bi bi-twitter-x"></i></a>
@@ -148,69 +146,44 @@
         </div>
     </section>
 
-    <!-- Tokenomics Section -->
-    <section id="tokenomics" class="py-5 bg-dark">
+    <!-- Token Info Section -->
+    <section id="token-info" class="py-5 bg-dark">
         <div class="container py-5">
             <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-title">Tokenomics</h2>
-                <p class="section-subtitle">Understanding NeonX's token distribution</p>
+                <h2 class="section-title">Token Info</h2>
+                <p class="section-subtitle">The essentials about NeonX</p>
             </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <div class="tokenomics-chart">
-                        <canvas id="tokenomicsChart"></canvas>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="tokenomics-details">
-                        <div class="tokenomics-item">
-                            <div class="tokenomics-color" style="background-color: #ff00ff;"></div>
-                            <div class="tokenomics-info">
-                                <h4>Public Sale</h4>
-                                <p>50% (500,000,000 NEONX)</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="token-card" data-aos="fade-up">
+                        <div class="token-info-grid">
+                            <div class="token-info-item">
+                                <h5>Name</h5>
+                                <p>NeonX</p>
+                            </div>
+                            <div class="token-info-item">
+                                <h5>Symbol</h5>
+                                <p>NEONX</p>
+                            </div>
+                            <div class="token-info-item">
+                                <h5>Total Supply</h5>
+                                <p>1,000,000,000 NEONX</p>
+                            </div>
+                            <div class="token-info-item">
+                                <h5>Blockchain</h5>
+                                <p>Solana</p>
+                            </div>
+                            <div class="token-info-item">
+                                <h5>Created On</h5>
+                                <p>pump.fun</p>
+                            </div>
+                            <div class="token-info-item">
+                                <h5>Token Address</h5>
+                                <p class="token-address">HE7pUWur57mLsKhA6Ajv3Y1JQq7jcHpsKpYNPU6npump</p>
                             </div>
                         </div>
-                        <div class="tokenomics-item">
-                            <div class="tokenomics-color" style="background-color: #00ffff;"></div>
-                            <div class="tokenomics-info">
-                                <h4>Liquidity Pool</h4>
-                                <p>20% (200,000,000 NEONX)</p>
-                            </div>
-                        </div>
-                        <div class="tokenomics-item">
-                            <div class="tokenomics-color" style="background-color: #ffff00;"></div>
-                            <div class="tokenomics-info">
-                                <h4>Marketing</h4>
-                                <p>15% (150,000,000 NEONX)</p>
-                            </div>
-                        </div>
-                        <div class="tokenomics-item">
-                            <div class="tokenomics-color" style="background-color: #00ff00;"></div>
-                            <div class="tokenomics-info">
-                                <h4>Team</h4>
-                                <p>10% (100,000,000 NEONX)</p>
-                            </div>
-                        </div>
-                        <div class="tokenomics-item">
-                            <div class="tokenomics-color" style="background-color: #ff0099;"></div>
-                            <div class="tokenomics-info">
-                                <h4>Ecosystem Growth</h4>
-                                <p>5% (50,000,000 NEONX)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="token-info mt-4">
-                        <div class="token-info-item">
-                            <h5>Total Supply</h5>
-                            <p>1,000,000,000 NEONX</p>
-                        </div>
-                        <div class="token-info-item">
-                            <h5>Token Type</h5>
-                            <p>SPL Token (Solana)</p>
-                        </div>
-                        <div class="token-info-item">
-                            <h5>Token Address</h5>
-                            <p class="token-address">HE7pUWur57mLsKhA6Ajv3Y1JQq7jcHpsKpYNPU6npump</p>
+                        <div class="token-description mt-4">
+                            <p>NeonX is a community-driven meme coin on Solana with no utility or intrinsic value. This token exists purely for fun and community engagement. Always do your own research before trading meme coins.</p>
                         </div>
                     </div>
                 </div>
@@ -255,12 +228,12 @@
                 <div class="roadmap-item">
                     <div class="roadmap-content">
                         <h3>Phase 3</h3>
-                        <h4>Utility Development</h4>
+                        <h4>Community Growth</h4>
                         <ul>
-                            <li>Staking platform</li>
-                            <li>NFT collection</li>
-                            <li>Community governance</li>
-                            <li>Partnerships with Solana projects</li>
+                            <li>Meme contests</li>
+                            <li>Community events</li>
+                            <li>Merchandise store</li>
+                            <li>Partnerships with other meme coins</li>
                             <li>10,000+ holders</li>
                         </ul>
                     </div>
@@ -268,12 +241,12 @@
                 <div class="roadmap-item">
                     <div class="roadmap-content">
                         <h3>Phase 4</h3>
-                        <h4>Mainstream Adoption</h4>
+                        <h4>Meme Domination</h4>
                         <ul>
                             <li>CEX listings</li>
-                            <li>Mobile app development</li>
-                            <li>Expanded ecosystem</li>
-                            <li>Global marketing</li>
+                            <li>Viral marketing campaigns</li>
+                            <li>Meme coin collaborations</li>
+                            <li>Global meme presence</li>
                             <li>100,000+ holders</li>
                         </ul>
                     </div>
@@ -339,7 +312,7 @@
                                 <h3>Swap SOL for NEONX</h3>
                                 <p>Enter the NeonX token address: <span class="token-address">HE7pUWur57mLsKhA6Ajv3Y1JQq7jcHpsKpYNPU6npump</span></p>
                                 <p>Set the amount of SOL you want to swap and complete the transaction.</p>
-                                <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=HE7pUWur57mLsKhA6Ajv3Y1JQq7jcHpsKpYNPU6npump" target="_blank" rel="noopener" class="btn btn-primary mt-3">Swap on Raydium</a>
+                                <a href="https://pump.fun/token/HE7pUWur57mLsKhA6Ajv3Y1JQq7jcHpsKpYNPU6npump" target="_blank" rel="noopener" class="btn btn-primary mt-3">Get on pump.fun</a>
                             </div>
                         </div>
                     </div>
@@ -390,7 +363,7 @@
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    NeonX is a community-driven meme coin built on the Solana blockchain. With a total supply of 1 billion tokens, NeonX aims to combine the fun aspects of meme coins with real utility and community governance.
+                                    NeonX is a community-driven meme coin built on the Solana blockchain through pump.fun. With a total supply of 1 billion tokens, NeonX is all about fun, memes, and community - no utility, just vibes!
                                 </div>
                             </div>
                         </div>
@@ -402,7 +375,7 @@
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    You can buy NeonX on decentralized exchanges like Raydium or Jupiter. Simply connect your Solana wallet, enter the NeonX token address (HE7pUWur57mLsKhA6Ajv3Y1JQq7jcHpsKpYNPU6npump), and swap your SOL for NEONX. Check out our detailed guide in the "How to Buy" section.
+                                    You can buy NeonX on pump.fun or decentralized exchanges like Raydium or Jupiter. Simply connect your Solana wallet, enter the NeonX token address (HE7pUWur57mLsKhA6Ajv3Y1JQq7jcHpsKpYNPU6npump), and swap your SOL for NEONX. Check out our detailed guide in the "How to Buy" section.
                                 </div>
                             </div>
                         </div>
@@ -426,7 +399,7 @@
                             </h2>
                             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    NeonX stands out with its focus on community governance and planned utility features. While embracing the fun and viral nature of meme coins, we're also building a sustainable ecosystem with staking, NFTs, and other utilities that provide real value to holders.
+                                    NeonX stands out with its vibrant community and eye-catching neon aesthetic. We're all about creating the most entertaining and engaging meme coin community on Solana. No complicated utilities or promises - just pure meme energy and a passionate community.
                                 </div>
                             </div>
                         </div>
@@ -469,7 +442,7 @@
                     <ul class="list-unstyled">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
-                        <li><a href="#tokenomics">Tokenomics</a></li>
+                        <li><a href="#token-info">Token Info</a></li>
                         <li><a href="#roadmap">Roadmap</a></li>
                     </ul>
                 </div>

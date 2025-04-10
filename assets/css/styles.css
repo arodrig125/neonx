@@ -1,4 +1,4 @@
-/* 
+/*
  * NeonX Website Styles
  * A modern, neon-themed design for the NeonX meme coin
  */
@@ -8,17 +8,17 @@
     --primary: #ff00ff; /* Neon Pink */
     --primary-dark: #cc00cc;
     --primary-light: #ff66ff;
-    
+
     /* Secondary Colors */
     --secondary: #00ffff; /* Neon Cyan */
     --secondary-dark: #00cccc;
     --secondary-light: #66ffff;
-    
+
     /* Accent Colors */
     --accent-1: #ffff00; /* Neon Yellow */
     --accent-2: #00ff00; /* Neon Green */
     --accent-3: #ff0099; /* Neon Magenta */
-    
+
     /* Neutral Colors */
     --dark: #0a0a1a;
     --darker: #050510;
@@ -26,30 +26,30 @@
     --gray: #5a5a6a;
     --gray-light: #8a8a9a;
     --light: #f0f0fa;
-    
+
     /* Font Families */
     --font-primary: 'Poppins', sans-serif;
     --font-heading: 'Orbitron', sans-serif;
-    
+
     /* Spacing */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 2rem;
     --spacing-xl: 4rem;
-    
+
     /* Border Radius */
     --radius-sm: 0.25rem;
     --radius-md: 0.5rem;
     --radius-lg: 1rem;
     --radius-xl: 2rem;
-    
+
     /* Shadows */
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
     --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
     --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.25);
-    
+
     /* Neon Shadows */
     --neon-pink: 0 0 5px rgba(255, 0, 255, 0.5), 0 0 10px rgba(255, 0, 255, 0.3), 0 0 15px rgba(255, 0, 255, 0.1);
     --neon-cyan: 0 0 5px rgba(0, 255, 255, 0.5), 0 0 10px rgba(0, 255, 255, 0.3), 0 0 15px rgba(0, 255, 255, 0.1);
@@ -411,47 +411,32 @@ section {
     color: var(--light);
 }
 
-/* Tokenomics Section */
-.tokenomics-chart {
-    position: relative;
-    margin-bottom: 2rem;
-}
-
-.tokenomics-details {
-    margin-bottom: 2rem;
-}
-
-.tokenomics-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.tokenomics-color {
-    width: 20px;
-    height: 20px;
-    border-radius: 4px;
-    margin-right: 1rem;
-}
-
-.tokenomics-info h4 {
-    margin-bottom: 0.25rem;
-    font-size: 1.1rem;
-}
-
-.tokenomics-info p {
-    margin-bottom: 0;
-    color: var(--gray-light);
-}
-
-.token-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
+/* Token Info Section */
+.token-card {
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: var(--radius-lg);
-    padding: 1.5rem;
+    padding: 2rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.token-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.2);
+}
+
+.token-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.token-info-item {
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .token-info-item h5 {
@@ -466,6 +451,20 @@ section {
     color: var(--light);
 }
 
+.token-description {
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.token-description p {
+    margin-bottom: 0;
+    color: var(--gray-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
 .token-address {
     font-family: monospace;
     font-size: 0.9rem;
@@ -473,6 +472,12 @@ section {
     padding: 0.25rem 0.5rem;
     border-radius: var(--radius-sm);
     word-break: break-all;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.token-address:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Roadmap Section */
@@ -805,11 +810,11 @@ hr {
     .hero-section {
         padding: 150px 0 80px;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .community-link {
         width: 150px;
         padding: 1.5rem;
@@ -821,35 +826,35 @@ hr {
         padding: 120px 0 60px;
         text-align: center;
     }
-    
+
     .hero-image {
         margin-top: 3rem;
     }
-    
+
     .section-title {
         font-size: 1.75rem;
     }
-    
+
     .section-subtitle {
         font-size: 1.1rem;
     }
-    
+
     .social-links {
         justify-content: center;
     }
-    
+
     .steps-container {
         padding-left: 2.5rem;
     }
-    
+
     .roadmap {
         padding-left: 1.5rem;
     }
-    
+
     .roadmap-item::before {
         left: -1.5rem;
     }
-    
+
     .community-link {
         width: 130px;
         padding: 1.25rem;

@@ -2,7 +2,7 @@
 
 ![NeonX Logo](assets/images/neonx-logo.svg)
 
-NeonX is a community-driven meme coin built on the Solana blockchain with a total supply of 1 billion tokens.
+NeonX is a community-driven meme coin built on the Solana blockchain through pump.fun with a total supply of 1 billion tokens.
 
 ## Website
 
@@ -23,19 +23,19 @@ Visit our website at [neonxcoin.xyz](https://neonxcoin.xyz)
 - Secure and transparent
 - Vibrant community
 
-## Tokenomics
+## Token Info
 
-- **Public Sale**: 50% (500,000,000 NEONX)
-- **Liquidity Pool**: 20% (200,000,000 NEONX)
-- **Marketing**: 15% (150,000,000 NEONX)
-- **Team**: 10% (100,000,000 NEONX)
-- **Ecosystem Growth**: 5% (50,000,000 NEONX)
+- **Name**: NeonX
+- **Symbol**: NEONX
+- **Total Supply**: 1,000,000,000 NEONX
+- **Blockchain**: Solana
+- **Created On**: pump.fun
 
 ## How to Buy
 
 1. Create a Solana wallet (Phantom, Solflare)
 2. Get SOL from an exchange
-3. Connect to a DEX like Raydium or Jupiter
+3. Visit pump.fun or connect to a DEX like Raydium or Jupiter
 4. Swap SOL for NEONX using the token address
 
 ## Community
@@ -62,18 +62,18 @@ Join our community:
 - DEX listings
 - 1,000+ holders
 
-### Phase 3: Utility Development
-- Staking platform
-- NFT collection
-- Community governance
-- Partnerships with Solana projects
+### Phase 3: Community Growth
+- Meme contests
+- Community events
+- Merchandise store
+- Partnerships with other meme coins
 - 10,000+ holders
 
-### Phase 4: Mainstream Adoption
+### Phase 4: Meme Domination
 - CEX listings
-- Mobile app development
-- Expanded ecosystem
-- Global marketing
+- Viral marketing campaigns
+- Meme coin collaborations
+- Global meme presence
 - 100,000+ holders
 
 ## Disclaimer
