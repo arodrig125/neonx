@@ -14,7 +14,7 @@ Visit our website at [neonxcoin.xyz](https://neonxcoin.xyz)
 - **Symbol**: NEONX
 - **Total Supply**: 1,000,000,000 NEONX
 - **Token Type**: SPL Token (Solana)
-- **Token Address**: HE7pUWur57mLsKhA6Ajv3Y1JQq7jcHpsKpYNPU6npump
+- **Token Address**: 8GBj4X4xBwL2qsdTkkkfkXub5w8YgcE96CJ7gLV3pump
 
 ## Features
 
