@@ -43,7 +43,7 @@ Visit our website at [neonxcoin.xyz](https://neonxcoin.xyz)
 Join our community:
 
 - [Twitter](https://twitter.com/)
-- [Telegram](https://t.me/)
+- [Telegram](https://t.me/neonxcoin_sol)
 - [Discord](https://discord.gg/)
 
 ## Roadmap
