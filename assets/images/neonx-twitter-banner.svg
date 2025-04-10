@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1500" height="500" viewBox="0 0 1500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050510" />
+      <stop offset="100%" stop-color="#0a0a1a" />
+    </linearGradient>
+    <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ff00" />
+      <stop offset="100%" stop-color="#00ffff" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="textGlow">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1500" height="500" fill="url(#bgGradient)" />
+  
+  <!-- Grid lines -->
+  <g opacity="0.1">
+    <line x1="0" y1="100" x2="1500" y2="100" stroke="#00ff00" stroke-width="1" />
+    <line x1="0" y1="200" x2="1500" y2="200" stroke="#00ff00" stroke-width="1" />
+    <line x1="0" y1="300" x2="1500" y2="300" stroke="#00ff00" stroke-width="1" />
+    <line x1="0" y1="400" x2="1500" y2="400" stroke="#00ff00" stroke-width="1" />
+    
+    <line x1="100" y1="0" x2="100" y2="500" stroke="#00ff00" stroke-width="1" />
+    <line x1="200" y1="0" x2="200" y2="500" stroke="#00ff00" stroke-width="1" />
+    <line x1="300" y1="0" x2="300" y2="500" stroke="#00ff00" stroke-width="1" />
+    <line x1="400" y1="0" x2="400" y2="500" stroke="#00ff00" stroke-width="1" />
+    <line x1="500" y1="0" x2="500" y2="500" stroke="#00ff00" stroke-width="1" />
+    <line x1="600" y1="0" x2="600" y2="500" stroke="#00ff00" stroke-width="1" />
+    <line x1="700" y1="0" x2="700" y2="500" stroke="#00ff00" stroke-width="1" />
+    <line x1="800" y1="0" x2="800" y2="500" stroke="#00ff00" stroke-width="1" />
+    <line x1="900" y1="0" x2="900" y2="500" stroke="#00ff00" stroke-width="1" />
+    <line x1="1000" y1="0" x2="1000" y2="500" stroke="#00ff00" stroke-width="1" />
+    <line x1="1100" y1="0" x2="1100" y2="500" stroke="#00ff00" stroke-width="1" />
+    <line x1="1200" y1="0" x2="1200" y2="500" stroke="#00ff00" stroke-width="1" />
+    <line x1="1300" y1="0" x2="1300" y2="500" stroke="#00ff00" stroke-width="1" />
+    <line x1="1400" y1="0" x2="1400" y2="500" stroke="#00ff00" stroke-width="1" />
+  </g>
+  
+  <!-- Safe Zone Indicator (invisible in final) -->
+  <rect x="0" y="0" width="1500" height="500" stroke="#ff0000" stroke-width="1" stroke-dasharray="5,5" fill="none" opacity="0" />
+  <rect x="100" y="100" width="1300" height="300" stroke="#ff0000" stroke-width="1" stroke-dasharray="5,5" fill="none" opacity="0" />
+  
+  <!-- Decorative Elements -->
+  <circle cx="150" cy="150" r="30" fill="url(#neonGradient)" opacity="0.3" filter="url(#glow)" />
+  <circle cx="1350" cy="350" r="40" fill="url(#neonGradient)" opacity="0.3" filter="url(#glow)" />
+  <circle cx="250" cy="400" r="20" fill="url(#neonGradient)" opacity="0.2" filter="url(#glow)" />
+  <circle cx="1200" cy="100" r="25" fill="url(#neonGradient)" opacity="0.2" filter="url(#glow)" />
+  
+  <!-- Main Content - Centered in Safe Zone -->
+  <g transform="translate(750, 250)">
+    <!-- Logo -->
+    <g transform="translate(-350, 0)">
+      <circle cx="0" cy="0" r="100" fill="url(#neonGradient)" filter="url(#glow)" />
+      <circle cx="0" cy="0" r="90" fill="#0a0a1a" />
+      <circle cx="0" cy="0" r="80" fill="url(#neonGradient)" opacity="0.9" />
+      
+      <!-- NeonX Logo -->
+      <g transform="translate(-40, -25) scale(2)">
+        <path d="M10 12L16 20L10 28" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M30 12L24 20L30 28" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+        <line x1="20" y1="10" x2="20" y2="30" stroke="white" stroke-width="3" stroke-linecap="round" />
+      </g>
+    </g>
+    
+    <!-- Text -->
+    <g transform="translate(150, 0)">
+      <text x="0" y="-40" font-family="'Orbitron', sans-serif" font-size="80" font-weight="bold" fill="url(#neonGradient)" text-anchor="middle" filter="url(#textGlow)">NEONX</text>
+      <text x="0" y="20" font-family="'Poppins', sans-serif" font-size="30" fill="white" text-anchor="middle">THE ULTIMATE MEME COIN</text>
+      <text x="0" y="70" font-family="'Poppins', sans-serif" font-size="24" fill="#00ff00" text-anchor="middle">ON SOLANA</text>
+    </g>
+  </g>
+  
+  <!-- URL - Inside Safe Zone -->
+  <text x="1350" y="450" font-family="'Poppins', sans-serif" font-size="24" fill="white" text-anchor="end">neonxcoin.xyz</text>
+</svg>
