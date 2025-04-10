@@ -2,7 +2,7 @@
 
 ![NeonX Logo](assets/images/neonx-logo.svg)
 
-NeonX is a community-driven meme coin built on the Solana blockchain through pump.fun with a total supply of 1 billion tokens.
+NeonX is a community-driven meme coin built on the Solana blockchain through pump.fun with a total supply of 1 billion tokens. **Illuminate the Chain** with the brightest meme coin in crypto!
 
 ## Website
 
