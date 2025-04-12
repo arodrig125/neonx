@@ -1,0 +1,28 @@
+Use these commands with BotFather to set up your bot's command menu:
+
+/setcommands
+
+Then paste this list:
+
+start - Start the bot and see main menu
+info - Get token information
+price - Check current price
+buy - Get link to buy NeonX
+stats - Community statistics
+links - Important links
+faq - Frequently asked questions
+help - Show help message
+
+You can also set a description for your bot:
+
+/setdescription
+
+Then paste:
+
+Official NeonX Bot - Get the latest info about the NeonX meme coin on Solana. Check price, learn how to buy, and join our community!
+
+And set a profile picture:
+
+/setuserpic
+
+Then send an image file of the NeonX logo.

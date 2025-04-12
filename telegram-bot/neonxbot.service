@@ -1,0 +1,16 @@
+[Unit]
+Description=NeonX Telegram Bot
+After=network.target
+
+[Service]
+User=neonxbot
+WorkingDirectory=/home/neonxbot/neonx/telegram-bot
+ExecStart=/usr/bin/python3 /home/neonxbot/neonx/telegram-bot/neonx_bot_enhanced.py
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=neonxbot
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeonX - The Ultimate Solana Meme Coin</title>
+    <meta name="description" content="NeonX is the brightest meme coin on Solana, illuminating the chain with vibrant community and exciting opportunities.">
+    <meta name="keywords" content="NeonX, Solana, meme coin, cryptocurrency, pump.fun, MEXC">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="assets/neonx-logo.png" alt="NeonX Logo"></a>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <i class="fas fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#tokenomics">Tokenomics</a></li>
+                    <li><a href="#buy">Buy</a></li>
+                    <li><a href="#roadmap">Roadmap</a></li>
+                    <li><a href="#community">Community</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <i class="fas fa-bars" onclick="showMenu()"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>NeonX</h1>
+                <h2>The Ultimate Solana Meme Coin</h2>
+                <p>Illuminating the Chain with the brightest vibes in crypto!</p>
+                <div class="hero-buttons">
+                    <a href="#buy" class="btn btn-primary">Buy Now</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+                <div class="token-address">
+                    <p><strong>Token Address:</strong></p>
+                    <div class="address-box">
+                        <span id="tokenAddress">8GBj4X4xBwL2qsdTkkkfkXub5w8YgcE96CJ7gLV3pump</span>
+                        <button type="button" onclick="copyAddress()" class="copy-btn" title="Copy token address"><i class="fas fa-copy"></i><span class="sr-only">Copy token address</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/neonx-hero.png" alt="NeonX Coin">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stat-item">
+                <i class="fas fa-users"></i>
+                <div class="stat-info">
+                    <h3 id="holderCount">1,200+</h3>
+                    <p>Holders</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-chart-line"></i>
+                <div class="stat-info">
+                    <h3 id="currentPrice">$0.00012</h3>
+                    <p>Current Price</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-fire"></i>
+                <div class="stat-info">
+                    <h3 id="marketCap">$120K</h3>
+                    <p>Market Cap</p>
+                </div>
+            </div>
+            <div class="stat-item">
+                <i class="fas fa-exchange-alt"></i>
+                <div class="stat-info">
+                    <h3 id="volume24h">$45K</h3>
+                    <p>24h Volume</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Chart Section -->
+    <section id="price-chart" class="price-chart">
+        <div class="container">
+            <div class="section-header">
+                <h2>Live Price Chart</h2>
+                <p>Real-time NeonX price data</p>
+            </div>
+            <div class="chart-container">
+                <div class="chart-options">
+                    <button type="button" class="chart-btn active" data-timeframe="24h">24H</button>
+                    <button type="button" class="chart-btn" data-timeframe="7d">7D</button>
+                    <button type="button" class="chart-btn" data-timeframe="30d">30D</button>
+                    <button type="button" class="chart-btn" data-timeframe="all">All</button>
+                </div>
+                <div class="price-info">
+                    <div class="current-price">
+                        <span id="live-price">$0.00012</span>
+                        <span id="price-change" class="price-up">+5.2%</span>
+                    </div>
+                    <div class="price-details">
+                        <div class="detail-item">
+                            <span class="detail-label">24h High:</span>
+                            <span class="detail-value" id="price-high">$0.00013</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">24h Low:</span>
+                            <span class="detail-value" id="price-low">$0.00011</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">24h Volume:</span>
+                            <span class="detail-value" id="price-volume">$45,000</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="priceChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About NeonX</h2>
+                <p>Illuminating the Solana Ecosystem</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>NeonX is more than just a meme coin – it's a vibrant community-driven project on the Solana blockchain that brings together crypto enthusiasts, meme lovers, and those looking for the next big opportunity in the digital asset space.</p>
+                    <p>Born from the creative energy of the Solana community, NeonX aims to stand out with its unique branding, engaged community, and commitment to creating a fun and rewarding experience for all holders.</p>
+                    <p>With our distinctive neon aesthetic and energetic community, we're lighting up the Solana ecosystem one transaction at a time!</p>
+                </div>
+                <div class="about-image">
+                    <img src="assets/about-image.png" alt="About NeonX">
+                </div>
+            </div>
+            <div class="features">
+                <div class="feature-item">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Fast Transactions</h3>
+                    <p>Benefit from Solana's lightning-fast transaction speeds and low fees.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Driven</h3>
+                    <p>A passionate community that drives growth and innovation.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-lock"></i>
+                    <h3>Secure</h3>
+                    <p>Built on Solana's secure and reliable blockchain technology.</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-globe"></i>
+                    <h3>Global Reach</h3>
+                    <p>Join holders from around the world in the NeonX community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section id="tokenomics" class="tokenomics">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tokenomics</h2>
+                <p>Understanding NeonX Token Distribution</p>
+            </div>
+            <div class="tokenomics-content">
+                <div class="tokenomics-chart">
+                    <canvas id="tokenomicsChart"></canvas>
+                </div>
+                <div class="tokenomics-info">
+                    <div class="token-info-item">
+                        <h3>Total Supply</h3>
+                        <p>1,000,000,000 NEONX</p>
+                    </div>
+                    <div class="token-info-item">
+                        <h3>Token Type</h3>
+                        <p>SPL Token (Solana)</p>
+                    </div>
+                    <div class="token-info-item">
+                        <h3>Initial Liquidity</h3>
+                        <p>95% of supply</p>
+                    </div>
+                    <div class="token-info-item">
+                        <h3>Team Allocation</h3>
+                        <p>5% of supply (locked)</p>
+                    </div>
+                    <div class="token-info-item">
+                        <h3>Tax</h3>
+                        <p>0% Buy / 0% Sell</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buy Section -->
+    <section id="buy" class="buy">
+        <div class="container">
+            <div class="section-header">
+                <h2>How to Buy NeonX</h2>
+                <p>Get Your NeonX Tokens Today</p>
+            </div>
+            <div class="buy-options">
+                <div class="buy-option">
+                    <img src="assets/pumpfun-logo.png" alt="pump.fun Logo">
+                    <h3>Buy on pump.fun</h3>
+                    <p>The original home of NeonX token.</p>
+                    <a href="https://pump.fun/coin/8GBj4X4xBwL2qsdTkkkfkXub5w8YgcE96CJ7gLV3pump" class="btn btn-primary" target="_blank" rel="noopener">Trade Now</a>
+                </div>
+                <div class="buy-option">
+                    <img src="assets/mexc-logo.png" alt="MEXC Logo">
+                    <h3>Trade on MEXC DEX</h3>
+                    <p>Trade NeonX on MEXC's decentralized exchange.</p>
+                    <a href="https://www.mexc.com/dex/trade?pair_ca=HE2uwAY5Y5pU7qLKQXaccuySajYKmrsk1Ekjb5u8nqDJ&chain_id=100000&token_ca=8GBj4X4xBwL2qsdTkkkfkXub5w8YgcE96CJ7gLV3pump&base_token_ca=So11111111111111111111111111111111111111112" class="btn btn-primary" target="_blank" rel="noopener">Trade Now</a>
+                </div>
+            </div>
+            <div class="buy-steps">
+                <h3>Step-by-Step Guide</h3>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>Create a Solana Wallet</h4>
+                        <p>Download and set up a Solana-compatible wallet like Phantom or Solflare.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>Buy SOL</h4>
+                        <p>Purchase SOL from an exchange and transfer it to your wallet.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>Connect Your Wallet</h4>
+                        <p>Visit pump.fun or MEXC DEX and connect your Solana wallet.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h4>Swap for NeonX</h4>
+                        <p>Enter the NeonX token address and swap your SOL for NeonX tokens.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section id="countdown" class="countdown">
+        <div class="container">
+            <div class="section-header">
+                <h2>Next Milestone</h2>
+                <p>Major Exchange Listing Coming Soon</p>
+            </div>
+            <div class="countdown-container">
+                <div class="countdown-timer">
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="countdown-days">00</div>
+                        <div class="countdown-label">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="countdown-hours">00</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="countdown-minutes">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-value" id="countdown-seconds">00</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+                <div class="countdown-info">
+                    <p>Get ready for our upcoming exchange listing! Make sure you're following our social channels for the official announcement.</p>
+                    <a href="#community" class="btn btn-secondary">Join Community</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="roadmap">
+        <div class="container">
+            <div class="section-header">
+                <h2>Roadmap</h2>
+                <p>Our Journey to Success</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Phase 1: Launch</h3>
+                        <ul>
+                            <li>Token creation on Solana</li>
+                            <li>Website launch</li>
+                            <li>Community building</li>
+                            <li>Initial marketing push</li>
+                            <li>Listing on pump.fun</li>
+                        </ul>
+                        <span class="timeline-date">Completed</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Phase 2: Growth</h3>
+                        <ul>
+                            <li>Telegram bot development</li>
+                            <li>Community expansion</li>
+                            <li>Partnerships with influencers</li>
+                            <li>MEXC DEX listing</li>
+                            <li>Enhanced website features</li>
+                        </ul>
+                        <span class="timeline-date">In Progress</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Phase 3: Expansion</h3>
+                        <ul>
+                            <li>CEX listings</li>
+                            <li>Community governance</li>
+                            <li>Merchandise store</li>
+                            <li>Strategic partnerships</li>
+                            <li>Global marketing campaigns</li>
+                        </ul>
+                        <span class="timeline-date">Q3 2025</span>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Phase 4: Evolution</h3>
+                        <ul>
+                            <li>Utility development</li>
+                            <li>Ecosystem expansion</li>
+                            <li>Major exchange listings</li>
+                            <li>Community events and meetups</li>
+                            <li>Charitable initiatives</li>
+                        </ul>
+                        <span class="timeline-date">Q4 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Team</h2>
+                <p>The Visionaries Behind NeonX</p>
+            </div>
+            <div class="team-container">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="assets/team-1.jpg" alt="Team Member">
+                    </div>
+                    <div class="member-info">
+                        <h3>Alex Neon</h3>
+                        <p class="member-role">Founder & Lead Developer</p>
+                        <p class="member-bio">Blockchain enthusiast with 5+ years of experience in crypto projects. Alex leads the technical development of NeonX.</p>
+                        <div class="member-social">
+                            <a href="https://twitter.com/" target="_blank" rel="noopener" title="Alex on Twitter"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>
+                            <a href="https://linkedin.com/" target="_blank" rel="noopener" title="Alex on LinkedIn"><i class="fab fa-linkedin"></i><span class="sr-only">LinkedIn</span></a>
+                            <a href="https://github.com/" target="_blank" rel="noopener" title="Alex on GitHub"><i class="fab fa-github"></i><span class="sr-only">GitHub</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="assets/team-2.jpg" alt="Team Member">
+                    </div>
+                    <div class="member-info">
+                        <h3>Sarah Bright</h3>
+                        <p class="member-role">Marketing Director</p>
+                        <p class="member-bio">With a background in digital marketing and a passion for crypto, Sarah drives the community growth and marketing strategies for NeonX.</p>
+                        <div class="member-social">
+                            <a href="https://twitter.com/" target="_blank" rel="noopener" title="Sarah on Twitter"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>
+                            <a href="https://linkedin.com/" target="_blank" rel="noopener" title="Sarah on LinkedIn"><i class="fab fa-linkedin"></i><span class="sr-only">LinkedIn</span></a>
+                            <a href="https://instagram.com/" target="_blank" rel="noopener" title="Sarah on Instagram"><i class="fab fa-instagram"></i><span class="sr-only">Instagram</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="assets/team-3.jpg" alt="Team Member">
+                    </div>
+                    <div class="member-info">
+                        <h3>Mike Glow</h3>
+                        <p class="member-role">Community Manager</p>
+                        <p class="member-bio">A long-time crypto enthusiast and community builder, Mike ensures the NeonX community stays engaged, informed, and growing.</p>
+                        <div class="member-social">
+                            <a href="https://twitter.com/" target="_blank" rel="noopener" title="Mike on Twitter"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>
+                            <a href="https://telegram.org/" target="_blank" rel="noopener" title="Mike on Telegram"><i class="fab fa-telegram"></i><span class="sr-only">Telegram</span></a>
+                            <a href="https://discord.com/" target="_blank" rel="noopener" title="Mike on Discord"><i class="fab fa-discord"></i><span class="sr-only">Discord</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="assets/team-4.jpg" alt="Team Member">
+                    </div>
+                    <div class="member-info">
+                        <h3>Lisa Spark</h3>
+                        <p class="member-role">Creative Director</p>
+                        <p class="member-bio">With an eye for design and branding, Lisa is responsible for the distinctive visual identity and creative direction of NeonX.</p>
+                        <div class="member-social">
+                            <a href="https://twitter.com/" target="_blank" rel="noopener" title="Lisa on Twitter"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>
+                            <a href="https://behance.net/" target="_blank" rel="noopener" title="Lisa on Behance"><i class="fab fa-behance"></i><span class="sr-only">Behance</span></a>
+                            <a href="https://dribbble.com/" target="_blank" rel="noopener" title="Lisa on Dribbble"><i class="fab fa-dribbble"></i><span class="sr-only">Dribbble</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="community">
+        <div class="container">
+            <div class="section-header">
+                <h2>Join Our Community</h2>
+                <p>Be Part of the NeonX Movement</p>
+            </div>
+            <div class="social-links">
+                <a href="https://t.me/neonxcoin_sol" class="social-link" target="_blank" rel="noopener">
+                    <i class="fab fa-telegram"></i>
+                    <span>Telegram</span>
+                </a>
+                <a href="https://twitter.com/" class="social-link" target="_blank" rel="noopener">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                </a>
+                <a href="https://discord.gg/" class="social-link" target="_blank" rel="noopener">
+                    <i class="fab fa-discord"></i>
+                    <span>Discord</span>
+                </a>
+                <a href="https://medium.com/" class="social-link" target="_blank" rel="noopener">
+                    <i class="fab fa-medium"></i>
+                    <span>Medium</span>
+                </a>
+            </div>
+            <div class="community-showcase">
+                <h3>Community Highlights</h3>
+                <div class="showcase-grid">
+                    <div class="showcase-item">
+                        <img src="assets/meme1.jpg" alt="Community Meme">
+                    </div>
+                    <div class="showcase-item">
+                        <img src="assets/meme2.jpg" alt="Community Meme">
+                    </div>
+                    <div class="showcase-item">
+                        <img src="assets/meme3.jpg" alt="Community Meme">
+                    </div>
+                    <div class="showcase-item">
+                        <img src="assets/meme4.jpg" alt="Community Meme">
+                    </div>
+                </div>
+                <a href="#" class="btn btn-secondary">Submit Your Meme</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="news">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest News</h2>
+                <p>Stay Updated with NeonX Developments</p>
+            </div>
+            <div class="news-container">
+                <div class="news-item">
+                    <div class="news-date">June 15, 2025</div>
+                    <h3>NeonX Listed on MEXC DEX</h3>
+                    <p>We're excited to announce that NeonX is now available for trading on MEXC DEX, providing more liquidity and accessibility to our community.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">June 10, 2025</div>
+                    <h3>Community AMA Session Announced</h3>
+                    <p>Join us for our monthly AMA session where the team will answer your questions about the project's roadmap, upcoming features, and more.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">June 5, 2025</div>
+                    <h3>NeonX Telegram Bot Launch</h3>
+                    <p>We've launched our official Telegram bot to provide real-time price updates, market information, and community engagement features.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">May 28, 2025</div>
+                    <h3>Website Redesign Complete</h3>
+                    <p>We're proud to unveil our newly redesigned website with enhanced features, better user experience, and more information about the NeonX project.</p>
+                    <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="news-cta">
+                <a href="#" class="btn btn-secondary">View All News</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything You Need to Know About NeonX</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is NeonX?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>NeonX is a community-driven meme coin built on the Solana blockchain. It aims to create a vibrant ecosystem where community members can engage, share, and potentially profit from the growth of the token.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I buy NeonX?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can buy NeonX on pump.fun or MEXC DEX by connecting your Solana wallet and swapping SOL for NeonX. Check out our detailed guide in the "How to Buy" section above.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is NeonX safe to invest in?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>As with all meme coins and cryptocurrencies, there are risks involved. NeonX is a community project with no intrinsic value or utility. Never invest more than you can afford to lose, and always do your own research before investing.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What makes NeonX different from other meme coins?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>NeonX stands out with its vibrant neon aesthetic, active community, and presence on both pump.fun and MEXC DEX. We focus on building a strong community and creating engaging content around the NeonX brand.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How can I contribute to the NeonX community?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can contribute by joining our Telegram group, following us on Twitter, creating and sharing memes, participating in community discussions, and helping spread the word about NeonX.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Will NeonX be listed on more exchanges?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We're actively working on getting NeonX listed on more exchanges. Stay tuned to our social media channels for announcements about new listings and partnerships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for the latest news and updates about NeonX.</p>
+                <form id="newsletterForm">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/neonx-logo.png" alt="NeonX Logo">
+                    <p>Illuminating the Chain with the brightest vibes in crypto!</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#tokenomics">Tokenomics</a></li>
+                        <li><a href="#buy">Buy</a></li>
+                        <li><a href="#roadmap">Roadmap</a></li>
+                        <li><a href="#community">Community</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="https://t.me/neonxcoin_sol" target="_blank" rel="noopener" title="Join our Telegram"><i class="fab fa-telegram"></i><span class="sr-only">Telegram</span></a>
+                        <a href="https://twitter.com/" target="_blank" rel="noopener" title="Follow us on Twitter"><i class="fab fa-twitter"></i><span class="sr-only">Twitter</span></a>
+                        <a href="https://discord.gg/" target="_blank" rel="noopener" title="Join our Discord"><i class="fab fa-discord"></i><span class="sr-only">Discord</span></a>
+                        <a href="https://medium.com/" target="_blank" rel="noopener" title="Read our Medium blog"><i class="fab fa-medium"></i><span class="sr-only">Medium</span></a>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Have questions? Reach out to us at:</p>
+                    <a href="mailto:info@neonxcoin.xyz">info@neonxcoin.xyz</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 NeonX. All rights reserved.</p>
+                <p class="disclaimer">Disclaimer: NeonX is a meme coin with no intrinsic value or financial return expectations. Always do your own research before investing.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" title="Back to top"><i class="fas fa-arrow-up"></i><span class="sr-only">Back to top</span></a>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

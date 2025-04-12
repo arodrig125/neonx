@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeonX - The Ultimate Solana Meme Coin</title>
+    <meta name="description" content="NeonX is the brightest meme coin on Solana, illuminating the chain with vibrant community and exciting opportunities.">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #00ffff;
+            --secondary-color: #ff00ff;
+            --dark-color: #121212;
+            --light-color: #f4f4f4;
+            --text-color: #ffffff;
+            --accent-color: #ff00cc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--dark-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #00ffff, #0088ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            margin: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00ffff, #0088ff);
+            color: var(--dark-color);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #ff00ff, #ff00cc);
+            color: var(--dark-color);
+            box-shadow: 0 5px 15px rgba(255, 0, 255, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 255, 255, 0.4);
+        }
+
+        /* Header */
+        header {
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, rgba(255, 0, 255, 0.1) 100%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+        }
+
+        .hero h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .token-address {
+            margin-top: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+
+        .address-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .address-box span {
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            margin-right: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .copy-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            color: var(--primary-color);
+        }
+
+        /* Buy Section */
+        .buy-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .buy-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .buy-option {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            width: 300px;
+            transition: all 0.3s ease;
+        }
+
+        .icon-primary {
+            color: var(--primary-color);
+            font-size: 3em;
+        }
+
+        .icon-secondary {
+            color: var(--secondary-color);
+            font-size: 3em;
+        }
+
+        .buy-option:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.2);
+        }
+
+        .buy-option h3 {
+            color: var(--primary-color);
+            margin: 15px 0;
+        }
+
+        /* Community Section */
+        .community-section {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)), radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, rgba(255, 0, 255, 0.1) 100%);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .social-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 10px;
+            width: 150px;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+        }
+
+        .social-link i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .footer-social {
+            margin: 20px 0;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-icons a {
+            font-size: 1.5rem;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 600px;
+            margin: 10px auto;
+        }
+
+        /* Animations */
+        .glow-effect {
+            animation: opacity-pulse 2s infinite alternate;
+        }
+
+        @keyframes opacity-pulse {
+            from {
+                opacity: 0.8;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .buy-options {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-links {
+                gap: 10px;
+            }
+
+            .social-link {
+                width: 120px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">NeonX</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>NeonX</h1>
+                <h2>The Ultimate Solana Meme Coin</h2>
+                <p>Illuminating the Chain with the brightest vibes in crypto!</p>
+
+                <div>
+                    <a href="#buy" class="btn btn-primary">Buy Now</a>
+                    <a href="#community" class="btn btn-secondary">Join Community</a>
+                </div>
+
+                <div class="token-address">
+                    <p><strong>Token Address:</strong></p>
+                    <div class="address-box">
+                        <span id="tokenAddress">8GBj4X4xBwL2qsdTkkkfkXub5w8YgcE96CJ7gLV3pump</span>
+                        <button type="button" onclick="copyAddress()" class="copy-btn" aria-label="Copy token address"><i class="fas fa-copy"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Buy Section -->
+    <section id="buy" class="buy-section">
+        <div class="container">
+            <h2>How to Buy NeonX</h2>
+            <p>Get your NeonX tokens today on these platforms</p>
+
+            <div class="buy-options">
+                <div class="buy-option">
+                    <i class="fas fa-rocket icon-primary"></i>
+                    <h3>Buy on pump.fun</h3>
+                    <p>The original home of NeonX token.</p>
+                    <a href="redirect-pump.html" class="btn btn-primary" target="_blank">Trade Now</a>
+                </div>
+
+                <div class="buy-option">
+                    <i class="fas fa-exchange-alt icon-secondary"></i>
+                    <h3>Trade on MEXC DEX</h3>
+                    <p>Trade NeonX on MEXC's decentralized exchange.</p>
+                    <a href="redirect-mexc.html" class="btn btn-primary" target="_blank">Trade Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="community-section">
+        <div class="container">
+            <h2>Join Our Community</h2>
+            <p>Be part of the NeonX movement</p>
+
+            <div class="social-links">
+                <a href="https://t.me/neonxcoin_sol" class="social-link" target="_blank" rel="noopener" aria-label="Join our Telegram community">
+                    <i class="fab fa-telegram"></i>
+                    <span>Telegram</span>
+                </a>
+                <a href="https://twitter.com/" class="social-link" target="_blank" rel="noopener" aria-label="Follow us on Twitter">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                </a>
+                <a href="https://discord.gg/" class="social-link" target="_blank" rel="noopener" aria-label="Join our Discord server">
+                    <i class="fab fa-discord"></i>
+                    <span>Discord</span>
+                </a>
+                <a href="https://medium.com/" class="social-link" target="_blank" rel="noopener" aria-label="Read our Medium articles">
+                    <i class="fab fa-medium"></i>
+                    <span>Medium</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">NeonX</div>
+                    <p>Illuminating the Chain with the brightest vibes in crypto!</p>
+                </div>
+
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#buy">Buy</a></li>
+                        <li><a href="#community">Community</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <div class="social-icons">
+                        <a href="https://t.me/neonxcoin_sol" target="_blank" rel="noopener" aria-label="Join our Telegram community"><i class="fab fa-telegram"></i></a>
+                        <a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://discord.gg/" target="_blank" rel="noopener" aria-label="Join our Discord server"><i class="fab fa-discord"></i></a>
+                        <a href="https://medium.com/" target="_blank" rel="noopener" aria-label="Read our Medium articles"><i class="fab fa-medium"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2025 NeonX. All rights reserved.</p>
+                    <p class="disclaimer">Disclaimer: NeonX is a meme coin with no intrinsic value or financial return expectations. Always do your own research before investing.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Copy Token Address
+        function copyAddress() {
+            const tokenAddress = document.getElementById('tokenAddress').textContent;
+            navigator.clipboard.writeText(tokenAddress).then(() => {
+                alert('Token address copied to clipboard!');
+            }).catch(err => {
+                console.error('Could not copy text: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
